@@ -37,8 +37,8 @@ def submit_form():
 			write_to_csv(data)
 			send_email(data)
 			return redirect('/thankyou.html')
-		except:
-			return 'did not save to database'
+		except Exception as inst:
+			return inst
 	else:
 		return 'Something went wrong. Try again!'
     # return 'form submitted hourrahhh'
